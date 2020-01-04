@@ -3,7 +3,7 @@ package com.dktechin.movie.ticketing.model;
 /**
  * 할인 정책으로 비율을 사용
  */
-public class PercentDiscountPolicy extends DiscountPolicy {
+public class PercentDiscountPolicy extends DefaultDiscountPolicy {
 
     private final double percent;
 
