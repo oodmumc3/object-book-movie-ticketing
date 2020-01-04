@@ -63,5 +63,18 @@ public class MovieTicketingMain {
 
         System.out.println("discountReserve :: " + discountReserve); // 216000원
         System.out.println("noDiscountReserve :: " + noDiscountReserve); // 24000원
+
+        // 할인 정책 없음
+        Movie starWarsMovie = new Movie(
+            "StarWars",
+            Duration.ofMinutes(120),
+            Money.wons(12000L),
+            null
+        );
+
+        Screening starWarsScreening = new Screening(starWarsMovie, 1, LocalDateTime.now());
+        Reservation starWarsReserve = starWarsScreening.reserve(customer, 1);
+
+        System.out.println("starWarsReserve :: " + starWarsReserve); // 12000원
     }
 }
