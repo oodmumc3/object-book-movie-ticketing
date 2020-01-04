@@ -4,6 +4,7 @@ import com.dktechin.movie.ticketing.model.AmountDiscountPolicy;
 import com.dktechin.movie.ticketing.model.Customer;
 import com.dktechin.movie.ticketing.model.Money;
 import com.dktechin.movie.ticketing.model.Movie;
+import com.dktechin.movie.ticketing.model.NoneDiscountPolicy;
 import com.dktechin.movie.ticketing.model.PercentDiscountPolicy;
 import com.dktechin.movie.ticketing.model.PeriodCondition;
 import com.dktechin.movie.ticketing.model.Reservation;
@@ -69,7 +70,7 @@ public class MovieTicketingMain {
             "StarWars",
             Duration.ofMinutes(120),
             Money.wons(12000L),
-            null
+            new NoneDiscountPolicy()
         );
 
         Screening starWarsScreening = new Screening(starWarsMovie, 1, LocalDateTime.now());
