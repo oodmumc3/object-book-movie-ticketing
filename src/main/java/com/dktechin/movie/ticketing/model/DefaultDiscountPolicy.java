@@ -8,12 +8,12 @@ import java.util.List;
  * 상영 정보가 할인 조건에 맞는지 확인후
  * 맞다면 자식 클래스의 getDiscountAmount를 호출하여 할인금액을 계산해 반환한다.
  */
-public abstract class DiscountPolicy {
+public abstract class DefaultDiscountPolicy implements DiscountPolicy {
 
     /** * 영화 할인 정책(조건) 목록 */
     private final List<DiscountCondition> conditions;
 
-    public DiscountPolicy(DiscountCondition... discountConditions) {
+    public DefaultDiscountPolicy(DiscountCondition... discountConditions) {
         this.conditions = Arrays.asList(discountConditions);
     }
 
