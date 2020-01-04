@@ -1,5 +1,20 @@
 package com.dktechin.movie.ticketing.model;
 
-public class AmountDiscountPolicy {
+/**
+ * 할인 정책으로 특정 금액을 사용한다.
+ */
+public class AmountDiscountPolicy extends DiscountPolicy {
 
+    /** * 할인 금액 정보 */
+    private final Money discountAmount;
+
+    public AmountDiscountPolicy(Money discountAmount, DiscountCondition... discountConditions) {
+        super(discountConditions);
+        this.discountAmount = discountAmount;
+    }
+
+    @Override
+    Money getDiscountAmount(Screening screening) {
+        return this.discountAmount;
+    }
 }
